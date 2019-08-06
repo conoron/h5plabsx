@@ -1,3 +1,3 @@
-Reboot-Slide
+Slide
 
-This slide will give you a summary of the type of bootstrap components that we will look at in this workshop. 
+This slide will give you the basics of of bootstrap components that we will look at in lab02 .
