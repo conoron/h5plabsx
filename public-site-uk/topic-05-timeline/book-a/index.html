@@ -245,75 +245,80 @@ html, body {
           </div>
         
           <div class="ui tab segment lab" data-tab="02">
-            <h1>Presentation context</h1>
+            <h1>Timeline context</h1>
 <p>This screen is slighty more complicated then previous workshops screens, in this example we are going to build a timeline of the internet so that the student can navigate through the timeline and see all the major dates that happen as part of the Internet, I will be using some slides that I prepared earlier (for the Presentation Workshop) and I will use those as my images.</p>
 <h2>Settings explained</h2>
-<p>On the screen we see a few part that we need to explain first before we continue, starting with the Title, which is the title the user will see on the Moodle page. in this example I have called it &quot;<strong>Timeline of the Internet</strong>&quot;.</p>
-<p><img src="img/07.jpg" alt="title"></p>
-<h2>Headings</h2>
-<p>Next give you timeline an Headline and add in some body text which is a description of the activity</p>
-<p><img src="img/08.jpg" alt="description"></p>
+<p>On the screen we see a few part that we need to explain first before we continue, starting with the Title, which is the title the user will see on the H5P Activity screen. in this example I have called it &quot;<strong>Timeline of the Internet</strong>&quot;, we can also add a short introduction and if you like you can add an image, all of these will appear on the start screen for you timeline.</p>
+<p><img src="img/06.jpg" alt="overall settings"></p>
+<p>You now should have something like this image. </p>
+<p><img src="img/07.jpg" alt="overall settings"></p>
+<h2>images explained</h2>
+<p>If you decide to use an image as an asset for a particular date then H5P is very rigid when it comes to using images, it is possible but from my experience its best to use images from <a href="https://commons.wikimedia.org" target="_blank">Wikipedia Commons</a></p>
+<p><img src="img/08.jpg" alt="images"></p>
+<h2>Search Wikipedia Commons</h2>
+<p>So if you want to include an image you will need to search for an image, I have searched for Licklider and got these results, I now need to click on the File resources for the image</p>
+<p><img src="img/09.jpg" alt="search"></p>
+<h2>How to use this file</h2>
+<p>After you have clicked on the file resource now you have to get the <strong>File URL</strong> and you can get this by clicking ion the <em>Use this file</em> </p>
+<p><img src="img/10.jpg" alt="get the file url"></p>
+<p>Copy the file URL so that you can use this later and include this image as an asset</p>
+<p><img src="img/11.jpg" alt="url for file"></p>
+<h2>Dates</h2>
+<p>Next we need to include the dates for this part of the timeline - in this case I&#39;m going to start at 1962 as the start date and because this part of the time line is about JCR Licklider I will use some heading with JCR Licklider in the title and also a brief peice of information about JCR Licklder for the bodytext.</p>
+<p><img src="img/12.jpg" alt="dates"></p>
+<p>You now should have something like this image.</p>
+<p><img src="img/13.jpg" alt="dates"></p>
+<h2>Assests</h2>
+<p>You can also include some <strong>assets</strong>, in this case I will include a media hyperlink that we copied earlier and we also wil include credit to Wikipedia Commons</p>
+<p><img src="img/14.jpg" alt="assets"></p>
+<p>You now should have something like this image.</p>
+<p><img src="img/15.jpg" alt="assets"></p>
+<h2>Save changes and Test</h2>
+<p>At this point we have out first date (1962) in place we should now save out changes and test, we might need to to make changes.</p>
+<p><img src="img/99.jpg" alt="save and test"></p>
+<p>When you display the timeline you should be able to see something like the image below</p>
+<p><img src="img/16.jpg" alt="save and test"></p>
+<h2>Next</h2>
+<p>Move to the next step</p>
 
           </div>
         
           <div class="ui tab segment lab" data-tab="03">
-            <h1>Links and Code Blocks</h1>
-<p>You can inert links in bullet points:</p>
-<ul>
-<li><a href="http://github.com">http://github.com</a></li>
-<li><a href="http://bitbucket.dom">http://bitbucket.dom</a></li>
-</ul>
-<p>You can also insert links to other steps:</p>
-<ul>
-<li><a href="#/01">Step 01</a></li>
-<li><a href="#/02">Step 02</a></li>
-<li><a href="#/03">Step 03</a></li>
-<li><a href="#/04">Step 04</a></li>
-</ul>
-<p>More Code Block examples</p>
-<pre><code class="lang-java">  publish(path, course) {
-    const basePath = &#39;../&#39; + path + &#39;/&#39; + this.folder;
-    futils.initEmptyPath(basePath);
-
-    this.resources = this.talks.concat(this.labs);
-    futils.copyFileToFolder(this.img, basePath);
-    futils.writeFile(basePath + &#39;/index.html&#39;, nunjucks.render(&#39;topic.html&#39;, this));
-
-    futils.writeFile(basePath + &#39;/ajaxlabel.html&#39;,
-        nunjucks.render(&#39;ajaxlabel.html&#39;,
-            { url: this.url.substring(5) + &#39;/&#39; + this.folder }));
-    futils.writeFile(basePath + &#39;/indexmoodle.html&#39;, nunjucks.render(&#39;indexmoodle.html&#39;, this));
-
-    console.log(this.title);
-    this.publishTalks(basePath);
-    this.publishLabs(basePath, course);
-  }</code></pre>
-<p>This was autodetected as javascript. This one is html:</p>
-<pre><code class="lang-html">&lt;div class=&quot;ui segment pushable&quot;&gt;
-  &lt;div class=&quot;ui inverted labeled icon left inline vertical sidebar menu&quot;&gt;
-    {% for resource in course.allLabs.resources %}
-      {% if resource.title == title %}
-        &lt;a class=&quot;active item&quot; href=&quot;../../{{resource.parentFolder}}/{{resource.folder}}/{{resource.link}}&quot;&gt;
-          {{resource.title}}
-        &lt;/a&gt;
-      {% else %}
-        &lt;a class=&quot;item&quot; href=&quot;../../{{resource.parentFolder}}/{{resource.folder}}/{{resource.link}}&quot;&gt;
-          {{resource.title}}
-        &lt;/a&gt;
-      {% endif %}
-    {% endfor %}
-  &lt;/div&gt;
-  &lt;div class=&quot;pusher&quot;&gt;
-    &lt;div class=&quot;ui basic segment&quot;&gt;
-      &lt;br&gt;
-      {% for chapter in chapters %}
-      &lt;div  class=&quot;ui tab segment lab&quot; data-tab=&quot;{{chapter.shortTitle}}&quot;&gt;
-        {{ chapter.content }}
-      &lt;/div&gt;
-     {% endfor %}
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;</code></pre>
+            <h1>adding more dates</h1>
+<p>We have already added in one date (1962) now we can add another date, this time we will add content for 1969 and this date will be about ARPAnet which was one of the founding research centers responsible for the development of the Internet</p>
+<h2>Settings explained</h2>
+<p>On the screen we see a few part that we need to explain first before we continue, starting with the Title, which is the title the user will see on the H5P Activity screen. in this example I have called it &quot;<strong>Timeline of the Internet</strong>&quot;, we can also add a short introduction and if you like you can add an image, all of these will appear on the start screen for you timeline.</p>
+<p><img src="img/06.jpg" alt="overall settings"></p>
+<p>You now should have something like this image. </p>
+<p><img src="img/07.jpg" alt="overall settings"></p>
+<h2>images explained</h2>
+<p>If you decide to use an image as an asset for a particular date then H5P is very rigid when it comes to using images, it is possible but from my experience its best to use images from <a href="https://commons.wikimedia.org" target="_blank">Wikipedia Commons</a></p>
+<p><img src="img/08.jpg" alt="images"></p>
+<h2>Search Wikipedia Commons</h2>
+<p>So if you want to include an image you will need to search for an image, I have searched for Licklider and got these results, I now need to click on the File resources for the image</p>
+<p><img src="img/09.jpg" alt="search"></p>
+<h2>How to use this file</h2>
+<p>After you have clicked on the file resource now you have to get the <strong>File URL</strong> and you can get this by clicking ion the <em>Use this file</em> </p>
+<p><img src="img/10.jpg" alt="get the file url"></p>
+<p>Copy the file URL so that you can use this later and include this image as an asset</p>
+<p><img src="img/11.jpg" alt="url for file"></p>
+<h2>Dates</h2>
+<p>Next we need to include the dates for this part of the timeline - in this case I&#39;m going to start at 1962 as the start date and because this part of the time line is about JCR Licklider I will use some heading with JCR Licklider in the title and also a brief peice of information about JCR Licklder for the bodytext.</p>
+<p><img src="img/12.jpg" alt="dates"></p>
+<p>You now should have something like this image.</p>
+<p><img src="img/13.jpg" alt="dates"></p>
+<h2>Assests</h2>
+<p>You can also include some <strong>assets</strong>, in this case I will include a media hyperlink that we copied earlier and we also wil include credit to Wikipedia Commons</p>
+<p><img src="img/14.jpg" alt="assets"></p>
+<p>You now should have something like this image.</p>
+<p><img src="img/15.jpg" alt="assets"></p>
+<h2>Save changes and Test</h2>
+<p>At this point we have out first date (1962) in place we should now save out changes and test, we might need to to make changes.</p>
+<p><img src="img/99.jpg" alt="save and test"></p>
+<p>When you display the timeline you should be able to see something like the image below</p>
+<p><img src="img/16.jpg" alt="save and test"></p>
+<h2>Next</h2>
+<p>Move to the next step</p>
 
           </div>
         
