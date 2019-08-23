@@ -1,3 +1,3 @@
 # Next H5P Tool
 
-H5P example NEXT that allows you to create . . .
+If you have an idea or would like use to set up a workshop for a new H5P component please contact us.
