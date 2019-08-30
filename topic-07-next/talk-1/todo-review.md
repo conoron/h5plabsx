@@ -1,3 +1,3 @@
 Slide
 
-This slide and associated video explain the concepts of the lab and the learning outcomes.
+This slide and associated will explain the concepts of the lab and the learning outcomes.
